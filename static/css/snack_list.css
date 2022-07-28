@@ -1,0 +1,11 @@
+.hyper a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    color: rgb(85, 18, 18);
+}
+.hyper a:hover{
+    background-color: black;
+    color: white;
+}

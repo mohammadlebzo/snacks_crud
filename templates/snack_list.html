@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Snacks List {% endblock title %}
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'css/snack_list.css' %}">
+{% endblock css_link %}
+
+{% block main_content %}
+<h1>Snacks</h1>
+<a href="{% url 'snack_create' %}">Add New Snack</a>
+{% for snack in snacks %}
+    <h3 class="hyper"><a href = "{% url 'snack_detail' snack.id %}">{{ snack.name }}</a></h3>
+{% endfor %}
+{% endblock main_content %}
