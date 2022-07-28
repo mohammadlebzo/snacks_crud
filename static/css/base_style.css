@@ -1,0 +1,17 @@
+h1{
+    color: blue;
+}
+.submit-button{
+    background-color: blue;
+    color: white;
+}
+.nav-bar a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+}
+.nav-bar a:hover{
+    background-color: black;
+    color: white;
+}

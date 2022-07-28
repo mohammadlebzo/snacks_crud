@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Create Snack {% endblock title %}
+
+{% block header_content %}
+    <nav class="nav-bar">
+        <a href="{% url 'snack_list' %}">Home</a>
+    </nav>
+{% endblock header_content %}
+
+{% block main_content %}
+
+<h1> Add New Snack</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="submit-button" type="submit" />
+    </form>
+
+{% endblock main_content %}

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Snack Details {% endblock title %}
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'css/snack_detail.css' %}">
+{% endblock css_link %}
+
+{% block header_content %}
+    <nav class="nav-bar">
+        <a href="{% url 'snack_list' %}">Home</a>
+    </nav>
+{% endblock header_content %}
+
+{% block main_content %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Purchaser</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>{{ snack.name }}</td>
+        <td>{{ snack.purchaser }}</td>
+        <td>{{ snack.description }}</td>
+        <td>
+            <ul>
+                <li>
+                    <a href="{% url 'snack_update' snack.pk %}">Update</a>
+                </li>
+                <li>
+                    <a href="{% url 'snack_delete' snack.pk %}">Delete</a>
+                </li>
+            </ul>
+        </td>
+      </tr>
+    </table>
+{% endblock main_content %}

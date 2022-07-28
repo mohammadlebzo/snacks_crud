@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Update Information {% endblock title %}
+
+{% block header_content %}
+    <nav class="nav-bar">
+        <a href="{% url 'snack_list' %}">Home</a>
+    </nav>
+{% endblock header_content %}
+
+{% block main_content %}
+
+<h1> Update {{ snack.name }} Snack Info</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" />
+    </form>
+
+{% endblock main_content %}

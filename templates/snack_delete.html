@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Delete Message {% endblock title %}
+
+{% block header_content %}
+    <nav class="nav-bar">
+        <a href="{% url 'snack_list' %}">Home</a>
+    </nav>
+{% endblock header_content %}
+
+{% block css_link %}
+
+<link rel="stylesheet" href="{% static 'css/snack_delete.css' %}">
+
+{% endblock css_link %}
+
+{% block main_content %}
+
+<h1> Deleting {{ snack.name }} Snack</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <h3>Are you sure you want to delete {{ thing.name }} snack?</h3>
+        <input class="del-button" type="submit" value="Delete"/>
+    </form>
+
+{% endblock main_content %}
